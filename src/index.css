@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #111111;
+    color: #F2F2F2;
+    overflow-x: hidden;
+    cursor: url('/pointer.cur'), auto;
+  }
+
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    touch-action: none;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    background: linear-gradient(135deg, #00ff88 0%, #ff0080 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .cyber-border {
+    border: 1px solid transparent;
+    background: linear-gradient(45deg, #00ff88, #ff0080) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #18181b;
+}
+::-webkit-scrollbar-thumb {
+  background: #00e6fb;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1de9ff;
+}
+::-webkit-scrollbar-corner {
+  background: #18181b;
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #00e6fb #18181b;
+}
+
+
+a,
+button,
+[role="button"] {
+  cursor: url('/link.cur'), auto;
+}
+
+
+::selection {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+} 
